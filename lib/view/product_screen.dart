@@ -17,7 +17,8 @@ class _iSO_ProductsState extends State<iSO_Products> {
   Widget build(BuildContext context) {
     providerT=Provider.of<StoreProvider>(context,listen: true);
     providerF=Provider.of<StoreProvider>(context,listen: false);
-    return CupertinoPageScaffold(child: Column(
+    return CupertinoPageScaffold(backgroundColor: CupertinoColors.white,
+    child: Column(
       children: [
         Container(
           height: 130,
@@ -45,23 +46,22 @@ class _iSO_ProductsState extends State<iSO_Products> {
                             width: 60,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(5),
-                                // color: CupertinoColors.destructiveRed,
                                 image: DecorationImage(image: AssetImage("${providerF!.storeList[index].img}"),fit: BoxFit.fill)
                             ),
                           ),
-                          SizedBox(width: 8,),
+                          SizedBox(width: 8),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("${providerT!.storeList[index].name}", style: TextStyle(fontSize: 25, color: CupertinoColors.black),),
-                              Text("${providerT!.storeList[index].price}", style: TextStyle(fontSize: 25, color: CupertinoColors.systemGrey2),),
+                              Text("\$ ${providerT!.storeList[index].name}", style: TextStyle(fontSize: 20, color: CupertinoColors.black),),
+                              Text("\$ ${providerT!.storeList[index].price}", style: TextStyle(fontSize: 15, color: CupertinoColors.systemGrey2),),
                             ],),
                           Spacer(),
                           CupertinoButton(
                             child: Icon(CupertinoIcons.add_circled),
                             onPressed: () {
-                              providerF!.addcart(index);
+                              providerT!.addcart(index);
                             },)
                         ],
                       ),

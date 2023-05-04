@@ -30,30 +30,5 @@ class _SHomeScreenState extends State<SHomeScreen> {
         },
       );
     },);
-
   }
 }
-
-
-
-// child: Column(
-//   crossAxisAlignment: CrossAxisAlignment.start,
-//   children: [
-//     SizedBox(
-//       height: 50,
-//     ),
-//     Padding(
-//       padding: const EdgeInsets.all(8.0),
-//       child: Row(
-//         children: [
-//           Text("Cupertino Store",style: TextStyle(color: CupertinoColors.black,fontSize: 20.sp,inherit:false,fontWeight: FontWeight.bold)),
-//         ],
-//       ),
-//     ),
-//     ListView.builder(itemBuilder: (context, index) => CupertinoListTile(
-//       title: Text("${providerF!.storeList[index].name}"),
-//       subtitle: Text("${providerF!.storeList[index].price}"),
-//     ),)
-//
-//   ],
-// ));

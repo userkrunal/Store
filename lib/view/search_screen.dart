@@ -10,7 +10,9 @@ class Store_SearchScreen extends StatefulWidget {
 class _Store_SearchScreenState extends State<Store_SearchScreen> {
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(child: Column(
+    return CupertinoPageScaffold(
+        backgroundColor: CupertinoColors.black,
+    child: Column(
       children: [
         Container(
             height: 110,
