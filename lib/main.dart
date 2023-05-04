@@ -1,19 +1,23 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'package:store/provider/store_provider.dart';
 import 'package:store/view/store_screen.dart';
 
 void main()
 {
   runApp(
-    Sizer(
-      builder: (context, orientation, deviceType) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          routes: {
-            '/':(context) => SHomeScreen(),
-          },
-        );
-      },
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => StoreProvider(),)
+      ],
+      child: CupertinoApp(
+        debugShowCheckedModeBanner: false,
+        routes: {
+          '/':(p0) => SHomeScreen(),
+        },
+      ),
     )
   );
 }
